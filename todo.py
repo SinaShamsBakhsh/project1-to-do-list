@@ -17,8 +17,6 @@ def load_tasks():
             tasks=[]
             for line in f:
                 tasks.append(line.strip())
-            for i in range(len(task_list)):
-                print(i+1, task_list[i])
             return tasks
     return []
 #------------------------------------------------------------------
