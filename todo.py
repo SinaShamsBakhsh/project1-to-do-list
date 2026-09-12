@@ -7,19 +7,24 @@ TASKS_FILE = os.environ.get("TASKS_FILE", "tasks.txt")
 
 #------------------------------------------------------------------
 def save_task(task):
-    with open(TASKS_FILE,'w') as task_file:
+    with open(TASKS_FILE,'w') as f:
         for t in task:
-            task_file.write(t + "\n")
+            f.write(t + "\n")
 #------------------------------------------------------------------
-
-
-    
+def load_tasks():
+    if os.path.exists(TASKS_FILE):
+        with open(TASKS_FILE, "r") as f:
+            tasks=[]
+            for line in f:
+                tasks.append(line.strip())
+            return tasks
+    return []
 #------------------------------------------------------------------
-task_list = []
 def add_task(task):
     task_list.append(task)
     return task_list
 #------------------------------------------------------------------
+task_list = []
 parser = argparse.ArgumentParser()
 subparser = parser.add_subparsers(dest='command',required=True)
 
