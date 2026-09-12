@@ -17,12 +17,14 @@ def load_tasks():
             tasks=[]
             for line in f:
                 tasks.append(line.strip())
+            for i in range(len(task_list)):
+                print(i+1, task_list[i])
             return tasks
     return []
 #------------------------------------------------------------------
-def add_task(task):
-    task_list.append(task)
-    return task_list
+def add_task(list,task):
+    list.append(task)
+    return list
 #------------------------------------------------------------------
 def delete_task(list, index):
     if 1 <= index <=len(list) :
