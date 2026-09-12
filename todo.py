@@ -24,6 +24,13 @@ def add_task(task):
     task_list.append(task)
     return task_list
 #------------------------------------------------------------------
+def delete_task(list, index):
+    if 1 <= index <=len(list) :
+        list.pop(index-1)
+        return list
+    else:
+        print(f"The task {index} does not exist")
+#------------------------------------------------------------------
 task_list = []
 parser = argparse.ArgumentParser()
 subparser = parser.add_subparsers(dest='command',required=True)
