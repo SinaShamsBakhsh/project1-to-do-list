@@ -8,5 +8,7 @@ This is a simple to-do list nothing more nothing less
 - save your tasks in text file
 ## prerequisite
 - python-dotenv
+
 you can download python-dotenv by copying the code below and pasting it in the terminal
+
 `pip install python-dotenv`
